@@ -1,0 +1,38 @@
+========================MONGODB======================================
+
+./mongod   	->to start mongo server
+./mongo		->to start mongo shell  // mongoCompass can be used as framework
+
+use <DatabaseName>  	-> to use database if not present it creates the database
+show databases		-> to list the databases
+
+show collections	-> to list collections // it can be referenced as tables in MySQL
+use <collectionsName>	-> to use collection
+
+db.<collectionName>.insert({Json values}) -> to insert in the collection
+db.<collectionName>.find() 		-> to run query for search
+db.<collectionName>.find().pretty()	-> see result in a format
+
+.find({"field":"Value"}) 	-> to find specific field
+.find({"field.arrayfield" : "arrayfieldvallue"}) -> to find specific arrayfield
+
+.find({"field.arrayfield" : {$gt : 30}}) -> to find specific field and get if its value is greater than 30
+.find({"field.arrayfield" : {$lt : 30}}) -> to find specific field and get if its value is less than 30
+
+.find({"field":"value", "field.arrayfield":"arrayfieldvalue"}) -> use of and conjuction where the two condition need to be true for the result
+.find({$or: [{"field":"value"},{"field":"value"}]}) -> use of or operator where if one condition match gets the result
+
+.find().sort({"field":"value"}) -> to get value in sorted way
+
+.update({"field1":"value1"},{$set: {"field2":"value2"},{"field3":"value3"}}) -> here field1 is for selecting the data and $set operation is used to update field2 and field3
+
+//by default update use single document
+//for multiple documents
+
+.update({"field1":"value1","field2":"value2"}, {$set : {"":""},{"":""},{multi:true}}) -> here the multi needs to be true to update all the datas which conditions are matched
+
+.remove({"field1":"value1"},{justOne:true}) -> to remove data just one data here field1 is used to identify the data
+.remove({}) -> to remove all the data in a collection
+
+.drop() -> to drop a collection in database
+
