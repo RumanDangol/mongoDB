@@ -1,6 +1,6 @@
 ========================MONGODB======================================
 
-./mongod   	->to start mongo server
+./mongod  or sudo service mongod start 	->to start mongo server
 ./mongo		->to start mongo shell  // mongoCompass can be used as framework
 
 use <DatabaseName>  	-> to use database if not present it creates the database
